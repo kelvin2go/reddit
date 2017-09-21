@@ -7,6 +7,7 @@
       <md-chip class="md-warn" ><span  @click="up(message)"><md-icon>thumb_up</md-icon> {{message.upCount}}</span> </md-chip>
       <md-chip><span @click="down(message)"><md-icon>thumb_down</md-icon> {{message.downCount}}</span></md-chip>
     </div>
+    <md-divider class="md-inset"></md-divider>
  </md-list-item>
 
 </template>
@@ -33,9 +34,6 @@ export default {
 </script>
 
 <style scoped>
-  .msg-container{
-    min-width: 470px;
-  }
   .md-chip{
     padding: 5px;
     margin-bottom: 5px;
@@ -43,6 +41,10 @@ export default {
   }
   .chip-container{
     margin: 5px;
+    max-width: 55px;
+  }
+  .md-divider.md-inset {
+    margin-left: 12px;
   }
 
 </style>

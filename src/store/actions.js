@@ -3,7 +3,6 @@ import * as types from './mutation-types'
 
 export const getAllMessages = ({ commit }) => {
   api.getAllMessages(messages => {
-    console.log(messages)
     commit(types.RECEIVE_ALL, {
       messages
     })
@@ -20,7 +19,6 @@ export const sendMessage = ({ commit }, payload) => {
 
 export const upVote = ({ commit }, payload) => {
   api.upVote(payload, message => {
-    console.log(message)
     commit(types.RECEIVE_UPVOTE, {
       message
     })

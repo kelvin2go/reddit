@@ -1,5 +1,6 @@
 <template>
   <md-list class="md-double-line">
+    {{messages.length}} messages
     <message
       v-for="message in sortedMessages"
       :key="message.id"

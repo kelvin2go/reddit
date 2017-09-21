@@ -1,11 +1,17 @@
 <template>
   <div class="hello">
     <md-whiteframe md-elevation="2" class="msg-container">
-      <md-input-container md-clearable>
-        <md-icon>speaker_notes</md-icon><label>Start Message</label>
-        <md-textarea maxlength="255"  v-model="msg"></md-textarea>
-      </md-input-container>
-      <md-button v-show="msg!=''" class="md-raised md-primary" @click="sendMessage" >Send</md-button>
+      <md-layout md-gutter>
+        <md-layout md-flex="80">
+          <md-input-container md-clearable>
+            <md-icon>speaker_notes</md-icon><label>Start Message</label>
+            <md-textarea maxlength="255"  v-model="msg"></md-textarea>
+          </md-input-container>
+        </md-layout>
+        <md-layout md-align="end">
+          <md-button :disabled="msg==''" class="md-raised md-primary" @click="sendMessage">Send</md-button>
+        </md-layout>
+      </md-layout>
     </md-whiteframe>
 
     <md-list class="custom-list md-triple-line">
