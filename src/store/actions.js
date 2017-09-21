@@ -17,3 +17,20 @@ export const sendMessage = ({ commit }, payload) => {
     })
   })
 }
+
+export const upVote = ({ commit }, payload) => {
+  api.upVote(payload, message => {
+    console.log(message)
+    commit(types.RECEIVE_UPVOTE, {
+      message
+    })
+  })
+}
+
+export const downVote = ({ commit }, payload) => {
+  api.downVote(payload, message => {
+    commit(types.RECEIVE_DOWNVOTE, {
+      message
+    })
+  })
+}

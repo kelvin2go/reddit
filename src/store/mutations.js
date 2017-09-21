@@ -10,23 +10,23 @@ export default {
     messages.forEach(message => {
       addMessage(state, message)
     })
-    console.log(state)
   },
-  [types.RECEIVE_MESSAGE] (state, { msg }) {
-    const message = {
-      msg,
+  [types.RECEIVE_MESSAGE] (state, { message }) {
+    const msg = {
+      ...message,
+      id: state.messages.length,
       upCount: 0,
       downCount: 0
     }
-    addMessage(state, message)
+    addMessage(state, msg)
   },
 
-  [types.RECEIVE_UPVOTE] (state, { msg }) {
-    msg.messagesupCount = msg.upCount++
+  [types.RECEIVE_UPVOTE] (state, { message }) {
+    state.messages[message.id].upCount++
   },
 
-  [types.RECEIVE_DOWNVOTE] (state, { msg }) {
-    msg.upCount = msg.upCount--
+  [types.RECEIVE_DOWNVOTE] (state, { message }) {
+    state.messages[message.id].downCount++
   }
 }
 

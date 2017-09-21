@@ -1,5 +1,5 @@
 <template>
-  <md-list>
+  <md-list class="md-double-line">
     <message
       v-for="message in sortedMessages"
       :key="message.id"
@@ -20,7 +20,7 @@ export default {
     sortedMessages () {
       return this.messages
        .slice()
-       .sort((a, b) => a.Count - b.upCount)
+       .sort((a, b) => b.upCount - a.upCount)
     }
   }
 

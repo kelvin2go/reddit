@@ -20,7 +20,7 @@ Vue.material.registerTheme({
   blue: {
     primary: 'blue',
     accent: 'pink',
-    warn: 'whatever'
+    warn: 'yellow'
   }
 })
 

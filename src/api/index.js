@@ -7,17 +7,24 @@ export function getAllMessages (cb) {
   }, LATENCY)
 }
 
-export function createMessage ({ text, thread }, cb) {
+export function createMessage ({ text }, cb) {
   const timestamp = Date.now()
-  const id = 'm_' + timestamp
   const message = {
-    id,
     text,
-    timestamp,
-    threadID: thread.id,
-    threadName: thread.name,
-    authorName: 'Evan'
+    timestamp
   }
+  setTimeout(function () {
+    cb(message)
+  }, LATENCY)
+}
+
+export function upVote ({ message }, cb) {
+  setTimeout(function () {
+    cb(message)
+  }, LATENCY)
+}
+
+export function downVote ({ message }, cb) {
   setTimeout(function () {
     cb(message)
   }, LATENCY)

@@ -5,7 +5,7 @@
         <md-icon>speaker_notes</md-icon><label>Start Message</label>
         <md-textarea maxlength="255"  v-model="msg"></md-textarea>
       </md-input-container>
-      <md-button v-show="msg!=''" class="md-raised md-primary" @click="sendMessage" >Primary</md-button>
+      <md-button v-show="msg!=''" class="md-raised md-primary" @click="sendMessage" >Send</md-button>
     </md-whiteframe>
 
     <md-list class="custom-list md-triple-line">
