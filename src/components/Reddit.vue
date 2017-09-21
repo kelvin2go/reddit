@@ -1,34 +1,41 @@
 <template>
   <div class="hello">
+    <md-whiteframe md-elevation="2" class="msg-container">
+      <md-input-container md-clearable>
+        <md-icon>speaker_notes</md-icon><label>Start Message</label>
+        <md-textarea maxlength="255"  v-model="msg"></md-textarea>
+      </md-input-container>
+      <md-button v-show="msg!=''" class="md-raised md-primary" @click="sendMessage" >Primary</md-button>
+    </md-whiteframe>
+
     <md-list class="custom-list md-triple-line">
-
-      <md-whiteframe md-elevation="2" class="msg-container">
-        <md-input-container md-clearable>
-          <label>Message box</label>
-          <md-textarea maxlength="255" @keyup.enter="sendMessage" v-model="msg"></md-textarea>
-        </md-input-container>
-      </md-whiteframe>
-
-      <md-list-item>
-        <md-avatar>
-          <img src="https://placeimg.com/40/40/people/1" alt="People">
-        </md-avatar>
-        <div class="md-list-text-container">
-          <span>Ali Connors</span>
-          <span>Brunch this weekend?</span>
-          <p>I'll be in your neighborhood doing errands...</p>
-        </div>
-      </md-list-item>
+      <message-section></message-section>
     </md-list>
   </div>
 </template>
 
 <script>
+import MessageSection from './MessageSection.vue'
 export default {
   name: 'reddit',
+  components: {
+    MessageSection
+  },
   data () {
     return {
       msg: ''
+    }
+  },
+  methods: {
+    sendMessage (e) {
+      const text = this.msg
+      console.log(text)
+      if (text.trim()) {
+        this.$store.dispatch('sendMessage', {
+          text
+        })
+        e.target.value = ''
+      }
     }
   }
 }
