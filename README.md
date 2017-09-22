@@ -1,12 +1,15 @@
 # reddit clone
 
-> a clone of reddit by vue, vuex, vue-router, vue-materialize css
-[vue](https://github.com/vuejs/vue)
-[vuex](https://github.com/vuejs/vuex/tree/dev/examples) flux state management. This project has referenced the store/mutation from vuex chat / todo example  
-[vue-router](https://github.com/vuejs/vue-router)
-[vue-material](http://vuematerial.io/)
+### Demo : reddit (http://kelvinho.js.org/reddit/#/) ###
 
-Demo : [reddit](http://kelvinho.js.org/reddit/#/)
+a clone of reddit by vue, vuex, vue-router, vue-materialize css
+
+ * [vue](https://github.com/vuejs/vue)
+ * [vuex](https://github.com/vuejs/vuex/tree/dev/examples) flux state management. This project has referenced the store/mutation from vuex chat / todo example  
+ * [vue-router](https://github.com/vuejs/vue-router)
+ * [vue-material](http://vuematerial.io/)
+
+
 ## Build Setup
 
 ``` bash
