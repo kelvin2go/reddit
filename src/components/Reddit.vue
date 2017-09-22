@@ -2,13 +2,13 @@
   <div class="reddit">
     <md-whiteframe md-elevation="2" class="msg-container">
       <md-layout md-gutter>
-        <md-layout md-flex="80">
+        <md-layout md-flex="75">
           <md-input-container md-clearable>
             <md-icon>speaker_notes</md-icon><label>Start Message</label>
             <md-textarea maxlength="255"  v-model="msg"></md-textarea>
           </md-input-container>
         </md-layout>
-        <md-layout md-align="end">
+        <md-layout md-flex="25" md-align="end">
           <md-button :disabled="msg==''" class="md-raised md-primary" @click="sendMessage">Send</md-button>
         </md-layout>
       </md-layout>
@@ -51,6 +51,11 @@ export default {
 <style scoped>
   .msg-container{
     padding: 10px;
+  }
+  .md-button{
+    min-width: auto;
+    max-height: auto;
+    margin: auto;
   }
 
 </style>
