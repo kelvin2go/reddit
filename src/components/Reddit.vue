@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="reddit">
     <md-whiteframe md-elevation="2" class="msg-container">
       <md-layout md-gutter>
         <md-layout md-flex="80">
